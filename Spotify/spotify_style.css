@@ -73,4 +73,49 @@ nav ul li{
 
 #myProgressBar{
     width: 80vw;
+    cursor: pointer;
+}
+
+.Songitemcontainer{
+    margin-top: 74px;
+    width: 150%;
+}
+
+.SongItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+
+.SongItem img{
+    width: 53px;
+    margin: 0 23px;
+    border-radius: 34px;
+}
+
+.timestamp{
+    margin: 0 18px;
+}
+
+.timestamp i{
+    cursor: pointer;
+}
+
+.songinfo{
+    display: flex;
+    position :absolute;
+    left : 0;
+    align-items: center;
+    font-family: "Teko",sans-serif;
+}
+
+.songinfo img{
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 }
