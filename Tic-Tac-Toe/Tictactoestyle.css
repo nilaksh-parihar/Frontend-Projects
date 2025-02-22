@@ -31,6 +31,7 @@ nav ul{
     grid-template-rows: repeat(3, 10vw);
     grid-template-columns: repeat(3, 10vw);
     font-family: "Montserrat", serif;
+    position: relative;
 }
 
 .Box{
@@ -46,14 +47,23 @@ nav ul{
     background-color:aquamarine;
 }
 
+.Info{
+    font-size: 22px;
+}
+
 .GameInfo{
     padding : 0 34px;
     font-family: "Oswald", serif;
 
 }
 
-.imgbox{
-    display : none ;
+.GameInfo h1{
+    font-size: 1.5rem;
+}
+
+.imgbox img{
+    width : 0 ;
+    transition: width 1s ease-in-out;
 }
 
 .br-0{
@@ -70,4 +80,41 @@ nav ul{
 
 .bb-0{
     border-bottom: 0;
+}
+
+#reset {
+    margin: 0 23px;
+    background-color: indianred;
+    color: white;
+    font-size: 15px;
+    padding: 1px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Montserrat", serif;
+    font-weight: bolder;
+}
+
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: dimgray;
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px){
+    .GameContainer{
+        flex-wrap: wrap;
+    }
+    .GameInfo{
+        margin-top: 34px;
+    }
+    .GameInfo h1{
+        font-size: 1.5rem;
+    }
+    .Container{
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
 }
