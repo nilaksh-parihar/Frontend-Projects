@@ -1,0 +1,473 @@
+ /* App container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background: none; /* Remove any background set here */
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  /* Title */
+  .app-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  /* ===== Game Menu Page ===== */
+  .menu-screen {
+    background: none;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Top bar with buttons */
+  .menu-header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-start; /* Align the back button to the left */
+    margin-bottom: 20px;
+  }
+  
+  /* Back & Mute Buttons */
+  .back-button,
+  .mute-button {
+    padding: 10px 16px;
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .back-button:hover,
+  .mute-button:hover {
+    background-color: #444;
+  }
+  
+  /* Game menu grid container */
+  .menu-grid-container {
+    background-color: rgba(58, 29, 65, 0.8); /* Purple-tinted black */
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .game-menu-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+/* Game Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+    gap: 20px; /* Add spacing between the cards */
+    padding: 20px;
+    justify-items: center; /* Center the cards in each grid cell */
+  }
+  
+  .menu-item {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s, filter 0.3s;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensure the overlay stays within the card */
+  }
+  
+  .menu-item {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s, filter 0.3s;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Ensure the overlay stays within the card */
+  }
+  
+  .menu-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)); /* Gradient overlay */
+    z-index: 1; /* Place the overlay above the background image */
+    pointer-events: none; /* Allow hover effects to pass through */
+    transition: background 0.3s; /* Optional: Smooth transition for the gradient */
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    filter: brightness(1.2); /* Brighten the card on hover */
+  }
+  
+  .menu-item h2 {
+    position: relative; /* Ensure the text is above the overlay */
+    z-index: 2;
+    font-size: 24px;
+    font-weight: 700;
+    color: white; /* Keep the text color white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Optional: Add a shadow for readability */
+  }
+  
+  /* ===== Tic Tac Toe ===== */
+  .tic-tac-toe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .status {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 10px;
+  }
+  
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #4a148c; /* Dark purple */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .cell:hover {
+    background-color: #6a1b9a; /* Lighter purple */
+  }
+  
+  .restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #8e24aa; /* Purple shade */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .restart-button:hover {
+    background-color: #6a1b9a; /* Darker purple shade */
+  }
+
+  .start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: none /* Purple to black gradient */
+  }
+  
+  .start-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .start-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a1b9a; /* Purple shade */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .start-button:hover {
+    background-color: #4a148c; /* Darker purple shade */
+  }
+
+  .start-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+  }
+
+  .corner-button {
+    position: fixed;
+    top: 20px;
+    z-index: 1000;
+    background-color: rgba(138, 43, 226, 0.2); /* Light purple tint */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+  }
+  
+  .corner-button:hover {
+    background-color: rgba(138, 43, 226, 0.4); /* Slightly darker purple tint */
+  }
+  
+  .back-corner {
+    left: 20px;
+  }
+  
+  .sound-corner {
+    right: 20px;
+  }
+  
+  .icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(1.5); /* Brighten the icons */
+  }
+
+  .hidden-audio {
+    display: none;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: url('./assets/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  /* Memory Game */
+.memory-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .memory-game-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .memory-game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px); /* Increase card size */
+    gap: 15px; /* Add spacing between cards */
+    justify-content: center; /* Center the grid */
+  }
+  
+  .memory-card {
+    width: 120px; /* Increase card width */
+    height: 120px; /* Increase card height */
+    background-color: #4a148c; /* Dark purple */
+    color: white;
+    font-size: 36px; /* Increase icon size */
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px; /* Add rounded corners */
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .memory-card.flipped {
+    background-color: #6a1b9a; /* Lighter purple */
+    transform: scale(1.1); /* Slightly enlarge flipped cards */
+  }
+  
+  .memory-game-status {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #8e24aa;
+  }
+  
+  .memory-game-reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #8e24aa; /* Purple shade */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .memory-game-reset:hover {
+    background-color: #6a1b9a; /* Darker purple shade */
+  }
+
+  /* Game Menu Header */
+.game-menu-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+.game-menu-title {
+    font-size: 36px;
+    color: white;
+    margin: 0;
+  }
+
+/* Rock Paper Scissors */
+.rps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .rps-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .rps-choices {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .rps-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a1b9a; /* Purple shade */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .rps-button:hover {
+    background-color: #4a148c; /* Darker purple shade */
+  }
+  
+  .rps-result {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .rps-outcome {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8e24aa; /* Highlight the result */
+  }
+  
+  .rps-reset {
+    padding: 10px 20px;
+    background-color: #8e24aa; /* Purple shade */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .rps-reset:hover {
+    background-color: #6a1b9a; /* Darker purple shade */
+  }
+
+  /* Number Guessing Game */
+.number-guess-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+  }
+  
+  .number-guess-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .number-guess-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #6a1b9a; /* Purple border */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .number-guess-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #6a1b9a; /* Purple shade */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+  }
+  
+  .number-guess-button:hover {
+    background-color: #4a148c; /* Darker purple shade */
+  }
+  
+  .number-guess-message {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #8e24aa; /* Highlight the message */
+  }
+  
+  .number-guess-reset {
+    padding: 10px 20px;
+    background-color: #8e24aa; /* Purple shade */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .number-guess-reset:hover {
+    background-color: #6a1b9a; /* Darker purple shade */
+  }
